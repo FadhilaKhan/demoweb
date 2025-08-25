@@ -1,6 +1,7 @@
 // components/dashboard/AnalyticsChart.tsx
 "use client";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { TooltipProps } from 'recharts';
 
 const data = [
   { name: 'Jan', revenue: 4000 },
@@ -12,7 +13,7 @@ const data = [
 ];
 
 // Custom Tooltip for a more polished look
-const CustomTooltip = ({ active, payload, label }: any) => {
+const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>) => {
   if (active && payload && payload.length) {
     return (
       <div className="p-2 bg-white/80 backdrop-blur-sm border border-[#85421C]/20 rounded-lg shadow-lg">
@@ -55,7 +56,7 @@ export const AnalyticsChart = () => {
         />
         <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(133, 66, 28, 0.1)' }} />
         <Legend iconSize={10} />
-        <Bar dataKey="revenue" fill="#f8ceb5ff" radius={[4, 4, 0, 0]} />
+        <Bar dataKey="revenue" fill="#85421C" radius={[4, 4, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
   );

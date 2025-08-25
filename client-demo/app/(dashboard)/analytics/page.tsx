@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MotionWrap } from "@/components/framer/MotionWrap"; // Adjust path if needed
-import { ArrowDown, ArrowUp, BarChart2, Users, MousePointerClick, Clock } from "lucide-react";
+import { ArrowDown, ArrowUp, BarChart2, Users, MousePointerClick, Clock, Zap, Timer, Layout } from "lucide-react";
 
 export default function AnalyticsPage() {
   return (
@@ -15,7 +15,7 @@ export default function AnalyticsPage() {
                     {/* Header with responsive font size */}
                     <div className="text-center">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 text-[#85421C]">Analytics Overview</h1>
-                        <p className="text-lg text-gray-600">Explore your website's performance and traffic data.</p>
+                        <p className="text-lg text-gray-600">Explore your website&apos;s performance and traffic data.</p>
                     </div>
                     
                     <Tabs defaultValue="overview" className="space-y-6">
@@ -74,17 +74,27 @@ export default function AnalyticsPage() {
                             </Card>
                         </TabsContent>
                         
-                        {/* Performance Tab Placeholder */}
+                        {/* Performance Tab */}
                         <TabsContent value="performance" className="mt-0">
-                             <Card className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-[#85421C]/10">
-                                <CardHeader>
-                                    <CardTitle className="text-xl text-[#6B3416]">Site Performance</CardTitle>
-                                    <CardDescription>Core web vitals and page load times.</CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-gray-600">Performance metrics and charts will be displayed here.</p>
-                                </CardContent>
-                            </Card>
+                             <div className="space-y-6">
+                                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                                    <StatCard title="LCP" value="2.1s" icon={<Timer className="h-5 w-5 text-green-500" />} change="-0.2s" isPositive />
+                                    <StatCard title="FID" value="15ms" icon={<Zap className="h-5 w-5 text-green-500" />} change="-5ms" isPositive />
+                                    <StatCard title="CLS" value="0.05" icon={<Layout className="h-5 w-5 text-green-500" />} change="-0.01" isPositive />
+                                    <StatCard title="Page Speed" value="92" icon={<BarChart2 className="h-5 w-5 text-blue-500" />} change="+5" isPositive />
+                                </div>
+                                <Card className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-[#85421C]/10">
+                                    <CardHeader>
+                                        <CardTitle className="text-xl text-[#6B3416]">Performance Trends</CardTitle>
+                                        <CardDescription>Load times and core web vitals over the last 6 months.</CardDescription>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <div className="h-[300px] sm:h-[350px]">
+                                            <AnalyticsChart />
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </div>
                         </TabsContent>
                     </Tabs>
                 </div>

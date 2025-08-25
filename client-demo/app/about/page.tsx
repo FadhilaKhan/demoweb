@@ -1,7 +1,7 @@
 // app/about/page.tsx
 import { MotionWrap } from "@/components/framer/MotionWrap"; // Adjust path if needed
-import { Button } from "@/components/ui/button";
 import { Users, Briefcase, Star } from "lucide-react";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -43,10 +43,11 @@ export default function AboutPage() {
             <div className="relative order-first lg:order-last">
               <div className="absolute inset-0 bg-gradient-to-br from-[#85421C]/10 to-[#85421C]/20 rounded-2xl transform -rotate-3 transition-transform duration-500 hover:rotate-0"></div>
               <div className="relative w-full h-80 md:h-96 bg-[#85421C]/5 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                <img 
+                <Image 
                   src="/images/10.jpg" // Ensure this image exists in your public/images folder
                   alt="Our Team Collaborating" 
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-500" 
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500" 
                 />
               </div>
               {/* Decorative elements */}

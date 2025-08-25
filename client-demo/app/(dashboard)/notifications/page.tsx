@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MotionWrap } from "@/components/framer/MotionWrap"; // Adjust path if needed
-import { Bell, UserPlus, MessageSquare, AlertTriangle, Settings } from "lucide-react";
+import { UserPlus, MessageSquare, AlertTriangle, Settings } from "lucide-react";
 
 export default function NotificationsPage() {
     const notifications = [
