@@ -7,34 +7,36 @@ import { MotionWrap } from "@/components/framer/MotionWrap"; // Adjust path if n
 export default function TermsAndConditionsPage() {
   return (
     // The main container with your site's consistent background gradient and padding
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-[#85421C]/10 py-12 sm:py-20">
-      <div className="container">
+    <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-[#85421C]/10 py-10 sm:py-16">
+      {/* Ensure page content is centered and padded on all screens */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <MotionWrap>
           {/* A styled container for the legal document, creating a "glassmorphism" effect */}
-          <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl border border-[#85421C]/20 shadow-lg shadow-[#85421C]/10 overflow-hidden">
-            
+          <div className="w-full max-w-4xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl border border-[#85421C]/20 shadow-lg shadow-[#85421C]/10 overflow-hidden">
             {/* Header Section */}
-            <div className="p-8 sm:p-12 text-center border-b border-[#85421C]/20 bg-white/50">
-              <h1 className="text-3xl md:text-4xl font-bold text-[#85421C]">
+            <div className="p-6 sm:p-8 md:p-10 text-center border-b border-[#85421C]/20 bg-white/50">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#85421C]">
                 Terms and Conditions
               </h1>
-              <p className="mt-3 text-md text-gray-500">
+              <p className="mt-3 text-sm sm:text-base text-gray-500">
                 <strong>Last Updated:</strong> August 25, 2025
               </p>
             </div>
 
             {/* Content Section with responsive padding */}
-            <article className="
-              prose prose-lg lg:prose-xl max-w-none
-              p-8 sm:p-12
-              prose-h2:text-[#6B3416]
-              prose-h3:text-[#85421C]
-              prose-strong:text-gray-800
-              prose-a:text-[#85421C] hover:prose-a:text-[#6B3416]
-              prose-ul:list-disc prose-ul:marker:text-[#85421C]
-            ">
-              
-              <p className="lead text-gray-600">
+            <article
+              className="
+                prose prose-base sm:prose-lg lg:prose-xl max-w-none
+                p-6 sm:p-8 md:p-10 lg:p-12
+                prose-h2:text-[#6B3416]
+                prose-h3:text-[#85421C]
+                prose-strong:text-gray-800
+                prose-a:text-[#85421C] hover:prose-a:text-[#6B3416]
+                prose-ul:list-disc prose-ul:marker:text-[#85421C]
+                break-words
+              "
+            >
+              <p className="text-gray-600">
                 Please read these terms and conditions carefully before using Our Service.
               </p>
 
@@ -88,7 +90,6 @@ export default function TermsAndConditionsPage() {
               <p>
                 If you have any questions about these Terms and Conditions, you can <a href="mailto:contact@example.com">contact us by email</a>.
               </p>
-
             </article>
           </div>
         </MotionWrap>

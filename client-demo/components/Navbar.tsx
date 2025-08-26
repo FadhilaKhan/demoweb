@@ -57,6 +57,7 @@ export const Navbar = () => {
             type="button"
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-[#85421C]"
+            aria-label={showPassword ? "Hide password" : "Show password"}
           >
             {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
           </button>
@@ -74,19 +75,19 @@ export const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#85421C]/30 bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/80 shadow-sm">
-      <div className="container h-16 flex items-center justify-between px-4">
+      <div className="container mx-auto max-w-screen-xl h-14 sm:h-16 md:h-20 flex items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Left Side: Logo */}
-        <Link href="/" className="font-bold text-xl text-[#85421C] hover:text-[#6B3416] transition-all duration-300">
+        <Link href="/" className="font-bold text-lg sm:text-xl md:text-2xl text-[#85421C] hover:text-[#6B3416] transition-all duration-300">
           ClientDemo
         </Link>
 
         {/* ================================================================= */}
         {/* ===== DESKTOP NAVIGATION (Hidden on screens smaller than lg) ===== */}
         {/* ================================================================= */}
-        <div className="hidden lg:flex items-center gap-8">
-          <nav className="flex items-center gap-8 text-sm font-medium">
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="flex items-center gap-6 xl:gap-8 text-sm md:text-base font-medium">
             {navLinks.map((link) => (
-              <Link key={link.label} href={link.href} className="relative text-gray-700 hover:text-[#85421C] transition-colors duration-200 group">
+              <Link key={link.label} href={link.href} className="relative text-gray-700 hover:text-[#85421C] transition-colors duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#85421C]/30 rounded">
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#85421C] transition-all duration-300 group-hover:w-full"></span>
               </Link>
@@ -96,7 +97,7 @@ export const Navbar = () => {
           <div className="h-6 w-px bg-gradient-to-b from-transparent via-[#85421C]/50 to-transparent" />
 
           {/* Authentication UI for Desktop */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 xl:gap-3">
             {isLoggedIn ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -118,7 +119,7 @@ export const Navbar = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 xl:gap-3">
                 <Dialog>
                   <DialogTrigger asChild>
                     <Button variant="ghost" className="hover:bg-[#85421C]/5 text-gray-700 hover:text-[#85421C] transition-colors duration-200">Log In</Button>
@@ -145,27 +146,29 @@ export const Navbar = () => {
         <div className="lg:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="h-10 w-10">
                 <Menu className="h-6 w-6 text-[#85421C]" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[340px] border-[#85421C]/30 bg-white">
+            <SheetContent side="right" className="w-[300px] sm:w-[340px] border-[#85421C]/30 bg-white pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
               <SheetHeader>
                 <SheetTitle className="text-2xl font-bold text-[#85421C]">Menu</SheetTitle>
               </SheetHeader>
               <div className="flex flex-col h-full py-6">
-                <nav className="flex flex-col gap-6 text-lg font-medium">
+                <nav className="flex flex-col gap-5 sm:gap-6 text-base sm:text-lg font-medium">
                   {navLinks.map((link) => (
                     <SheetClose asChild key={link.label}>
-                      <Link href={link.href} className="text-gray-700 hover:text-[#85421C] transition-colors">{link.label}</Link>
+                      <Link href={link.href} className="text-gray-700 hover:text-[#85421C] transition-colors">
+                        {link.label}
+                      </Link>
                     </SheetClose>
                   ))}
                 </nav>
-                <div className="mt-auto flex flex-col gap-4">
+                <div className="mt-auto flex flex-col gap-3 sm:gap-4">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button variant="ghost" className="w-full text-lg justify-start p-0 hover:bg-[#85421C]/5 text-gray-700 hover:text-[#85421C]">Log In</Button>
+                      <Button variant="ghost" className="w-full text-base sm:text-lg justify-start p-0 hover:bg-[#85421C]/5 text-gray-700 hover:text-[#85421C]">Log In</Button>
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-md shadow-xl border-[#85421C]/30 bg-white">
                       <DialogHeader className="space-y-3">
@@ -176,7 +179,7 @@ export const Navbar = () => {
                     </DialogContent>
                   </Dialog>
                   <SheetClose asChild>
-                    <Button asChild className="w-full text-lg bg-[#85421C] hover:bg-[#6B3416] text-white">
+                    <Button asChild className="w-full text-base sm:text-lg bg-[#85421C] hover:bg-[#6B3416] text-white">
                       <Link href="/signup">Sign Up</Link>
                     </Button>
                   </SheetClose>
