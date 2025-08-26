@@ -5,8 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Chrome, Github, Eye, EyeOff, CheckCircle, Shield, Users, Zap } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+
 import { MotionWrap } from "@/components/framer/MotionWrap"; // Adjust path if needed
 import { useState } from "react";
 
@@ -181,7 +180,7 @@ export default function SignUpPage() {
             {/* Text Content */}
             <div className="text-white space-y-6">
               <h2 className="text-4xl font-bold mb-4 leading-tight">
-                "Join thousands of developers building the future"
+                &quot;Join thousands of developers building the future&quot;
               </h2>
               <p className="text-xl text-white/80 mb-8">
                 Start your journey with us today and unlock endless possibilities

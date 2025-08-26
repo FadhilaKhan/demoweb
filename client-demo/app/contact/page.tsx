@@ -17,7 +17,7 @@ export default function ContactPage() {
           <div className="text-center mb-12 md:mb-16">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 text-[#85421C]">Get In Touch</h1>
             <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto leading-relaxed">
-              We'd love to hear from you. Fill out the form below and we'll get back to you shortly.
+              We&apos;d love to hear from you. Fill out the form below and we&apos;ll get back to you shortly.
             </p>
           </div>
         </MotionWrap>
@@ -52,7 +52,7 @@ export default function ContactPage() {
                     <Label htmlFor="subject" className="text-gray-700 font-semibold">Subject</Label>
                     <Input 
                       id="subject" 
-                      placeholder="What's this about?" 
+                      placeholder="What&apos;s this about?" 
                       className="mt-2 bg-white/50 border-[#85421C]/30 focus:border-[#85421C] focus:ring-[#85421C] transition-all duration-200" 
                     />
                   </div>
@@ -147,7 +147,7 @@ export default function ContactPage() {
             <div className="bg-gradient-to-r from-[#85421C] to-[#6B3416] rounded-2xl p-8 md:p-12 text-white max-w-4xl mx-auto">
               <h3 className="text-2xl sm:text-3xl font-bold mb-4">Ready to Start Your Project?</h3>
               <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-                Let's discuss your ideas and turn them into reality. We're here to help you every step of the way.
+                Let&apos;s discuss your ideas and turn them into reality. We&apos;re here to help you every step of the way.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="bg-white text-[#85421C] px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-200 shadow-lg">

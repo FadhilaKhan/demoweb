@@ -118,7 +118,7 @@ export default function HomePage() {
                   </div>
                   {/* --- MOBILE CHANGE: Adjusted font size for mobile --- */}
                   <blockquote className="text-lg md:text-xl italic text-gray-700 mb-6 leading-relaxed">
-                    "Working with this team was a game-changer. The final product exceeded all of our expectations. Highly recommend!"
+                    &quot;Working with this team was a game-changer. The final product exceeded all of our expectations. Highly recommend!&quot;
                   </blockquote>
                   <div className="flex items-center justify-center gap-4">
                     <div className="w-12 h-12 bg-[#85421C] rounded-full flex items-center justify-center text-white font-bold">

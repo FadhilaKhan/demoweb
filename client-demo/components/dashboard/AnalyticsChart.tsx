@@ -11,13 +11,22 @@ const data = [
   { name: 'Jun', revenue: 5500 },
 ];
 
+// Types for tooltip to avoid `any`
+interface TooltipPayloadItem { value?: number }
+interface CustomTooltipProps {
+  active?: boolean;
+  payload?: TooltipPayloadItem[];
+  label?: string;
+}
+
 // Custom Tooltip for a more polished look
-const CustomTooltip = ({ active, payload, label }: any) => {
-  if (active && payload && payload.length) {
+const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
+  if (active && Array.isArray(payload) && payload.length) {
+    const value = typeof payload[0]?.value === 'number' ? payload[0].value : 0;
     return (
       <div className="p-2 bg-white/80 backdrop-blur-sm border border-[#85421C]/20 rounded-lg shadow-lg">
-        <p className="label font-semibold text-[#6B3416]">{`${label}`}</p>
-        <p className="intro text-gray-700">{`Revenue : $${payload[0].value}`}</p>
+        <p className="label font-semibold text-[#6B3416]">{label}</p>
+        <p className="intro text-gray-700">Revenue : ${value}</p>
       </div>
     );
   }

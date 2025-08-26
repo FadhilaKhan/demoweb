@@ -95,8 +95,8 @@ export default function FaqPage() {
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-700 leading-relaxed pt-4 pb-2">
                   We believe in transparent and regular communication throughout the project. We provide weekly progress updates, 
-                  maintain a shared project dashboard, and are available for calls or meetings as needed. You'll always know 
-                  where your project stands and what's coming next.
+                  maintain a shared project dashboard, and are available for calls or meetings as needed. You&apos;ll always know 
+                  where your project stands and what&apos;s coming next.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -110,7 +110,7 @@ export default function FaqPage() {
               {/* Responsive font sizes */}
               <h3 className="text-xl sm:text-2xl font-bold mb-4">Still have questions?</h3>
               <p className="text-lg mb-6 opacity-90">
-                We're here to help! Get in touch with us for a personalized consultation.
+                We&apos;re here to help! Get in touch with us for a personalized consultation.
               </p>
               <button className="bg-white text-[#85421C] px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-200 shadow-lg">
                 Contact Us Today

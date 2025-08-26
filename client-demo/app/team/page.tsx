@@ -117,8 +117,8 @@ export default function TeamPage() {
               {/* --- MOBILE CHANGE: Adjusted font sizes for mobile --- */}
               <h3 className="text-2xl sm:text-3xl font-bold mb-4">Want to Join Our Team?</h3>
               <p className="text-base sm:text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-                We're always looking for talented individuals who share our passion for innovation and excellence. 
-                Let's build something amazing together.
+                We&apos;re always looking for talented individuals who share our passion for innovation and excellence. 
+                Let&apos;s build something amazing together.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                  {/* --- CODE IMPROVEMENT: Used consistent Button component --- */}

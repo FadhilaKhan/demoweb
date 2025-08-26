@@ -33,7 +33,7 @@ export default function SettingsPage() {
                                 <Card className="bg-transparent border-none shadow-none">
                                     <CardHeader className="p-0">
                                         <CardTitle className="text-2xl text-[#6B3416]">Profile</CardTitle>
-                                        <CardDescription>Make changes to your public information here. Click save when you're done.</CardDescription>
+                                        <CardDescription>Make changes to your public information here. Click save when you&apos;re done.</CardDescription>
                                     </CardHeader>
                                     <CardContent className="space-y-4 mt-6 p-0">
                                         <div className="space-y-2">
@@ -56,7 +56,7 @@ export default function SettingsPage() {
                                 <Card className="bg-transparent border-none shadow-none">
                                     <CardHeader className="p-0">
                                         <CardTitle className="text-2xl text-[#6B3416]">Password</CardTitle>
-                                        <CardDescription>Change your password here. After saving, you'll be logged out.</CardDescription>
+                                        <CardDescription>Change your password here. After saving, you&apos;ll be logged out.</CardDescription>
                                     </CardHeader>
                                     <CardContent className="space-y-4 mt-6 p-0">
                                         <div className="space-y-2">

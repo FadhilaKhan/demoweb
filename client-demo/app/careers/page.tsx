@@ -1,6 +1,6 @@
 // app/careers/page.tsx
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import { MotionWrap } from "@/components/framer/MotionWrap"; // Adjust path if needed
 import { ArrowRight } from "lucide-react";
 
@@ -32,7 +32,7 @@ export default function CareersPage() {
           <div className="text-center mb-12 md:mb-16">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 text-[#85421C]">Join Our Team</h1>
             <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto leading-relaxed">
-              We're always looking for talented and passionate individuals to help us build the future.
+              We&apos;re always looking for talented and passionate individuals to help us build the future.
             </p>
           </div>
         </MotionWrap>
@@ -69,9 +69,9 @@ export default function CareersPage() {
           {/* "Don't see a role?" CTA */}
           <div className="text-center mt-16">
             <div className="bg-white/50 border border-dashed border-[#85421C]/40 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-[#6B3416] mb-3">Don't See Your Role?</h3>
+              <h3 className="text-2xl font-bold text-[#6B3416] mb-3">Don&apos;t See Your Role?</h3>
               <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-                We're always interested in connecting with talented people. If you believe you'd be a great fit for our team, send us your resume.
+                We&apos;re always interested in connecting with talented people. If you believe you&apos;d be a great fit for our team, send us your resume.
               </p>
               <Button 
                 variant="outline"

@@ -14,7 +14,7 @@ export default function PricingPage() {
             {/* Responsive font sizes for the main heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 text-[#85421C]">Our Pricing</h1>
             <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto leading-relaxed">
-              Choose the plan that's right for your business.
+              Choose the plan that&apos;s right for your business.
             </p>
           </div>
           

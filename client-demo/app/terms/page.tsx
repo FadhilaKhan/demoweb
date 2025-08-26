@@ -71,7 +71,7 @@ export default function TermsAndConditionsPage() {
 
               <h2>Limitation of Liability</h2>
               <p>
-                Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.
+                Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven&apos;t purchased anything through the Service.
               </p>
 
               <h2>Governing Law</h2>
@@ -81,7 +81,7 @@ export default function TermsAndConditionsPage() {
 
               <h2>Changes to These Terms and Conditions</h2>
               <p>
-                We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect.
+                We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days&apos; notice prior to any new terms taking effect.
               </p>
 
               <h2>Contact Us</h2>
