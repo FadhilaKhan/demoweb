@@ -49,7 +49,7 @@ export default function TeamPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-[#85421C]/5 py-16 md:py-20">
-      <div className="container">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <MotionWrap>
           <div className="text-center mb-12 md:mb-16">
             {/* --- MOBILE CHANGE: Adjusted font sizes for mobile --- */}
@@ -61,7 +61,7 @@ export default function TeamPage() {
         </MotionWrap>
 
         <MotionWrap delay={0.2}>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 max-w-6xl mx-auto">
             {teamMembers.map((member) => (
               <Card 
                 key={member.name} 
@@ -69,7 +69,7 @@ export default function TeamPage() {
               >
                 <CardHeader className="pb-4">
                   <div className="relative">
-                    <Avatar className="w-32 h-32 mx-auto mb-6 ring-4 ring-[#85421C]/20 group-hover:ring-[#85421C]/40 transition-all duration-300">
+                    <Avatar className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mx-auto mb-6 ring-4 ring-[#85421C]/20 group-hover:ring-[#85421C]/40 transition-all duration-300">
                       <AvatarImage 
                         src={member.avatar} 
                         alt={member.name}
