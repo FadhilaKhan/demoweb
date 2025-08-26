@@ -9,7 +9,7 @@ export default function PricingPage() {
     // Main page container with responsive padding
     <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-[#85421C]/5 py-12 sm:py-20">
       <MotionWrap>
-        <div className="container">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             {/* Responsive font sizes for the main heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 text-[#85421C]">Our Pricing</h1>

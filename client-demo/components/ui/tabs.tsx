@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -13,7 +12,8 @@ function Tabs({
   return (
     <TabsPrimitive.Root
       data-slot="tabs"
-      className={cn("flex flex-col gap-2", className)}
+      // Added responsive gap for more breathing room on larger screens.
+      className={cn("flex flex-col gap-3 sm:gap-4", className)}
       {...props}
     />
   )
@@ -27,11 +27,11 @@ function TabsList({
     <TabsPrimitive.List
       data-slot="tabs-list"
       className={cn(
-        "bg-muted text-muted-foreground inline-flex h-9 w-fit items-center justify-center rounded-lg p-[3px]",
+        "bg-muted text-muted-foreground inline-flex h-10 w-full items-center justify-start rounded-lg p-1 sm:w-fit sm:justify-center",
         
-        // --- MOBILE RESPONSIVE FIX ---
+        // --- MOBILE RESPONSIVE CORE ---
         // This makes the list scrollable horizontally if the tabs overflow.
-        // On mobile, users can swipe left and right.
+        // On mobile, users can swipe left and right. Essential for many tabs.
         "overflow-x-auto", 
         
         className
@@ -49,7 +49,15 @@ function TabsTrigger({
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
       className={cn(
-        "data-[state=active]:bg-background dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 text-foreground dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "data-[state=active]:bg-background dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 text-foreground dark:text-muted-foreground inline-flex flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-md border border-transparent font-medium transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+
+        // --- RESPONSIVE SIZING & TYPOGRAPHY ---
+        // Larger text and padding on mobile for better readability and bigger tap targets.
+        "px-3 py-1.5 text-base sm:text-sm",
+        
+        // On small screens, allow triggers to grow. On larger screens, they size to content.
+        "sm:flex-initial",
+
         className
       )}
       {...props}
@@ -64,7 +72,18 @@ function TabsContent({
   return (
     <TabsPrimitive.Content
       data-slot="tabs-content"
-      className={cn("flex-1 outline-none", className)}
+      className={cn(
+        "outline-none",
+        
+        // --- RESPONSIVE PADDING ---
+        // Adds more padding inside the content area on larger screens.
+        "p-2 sm:p-4 md:p-6",
+        
+        // Standard focus styles for accessibility.
+        "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+        
+        className
+      )}
       {...props}
     />
   )

@@ -6,16 +6,19 @@ import { cn } from "@/lib/utils"
 function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
     // --- THIS IS THE KEY RESPONSIVE WRAPPER ---
-    // 'overflow-x-auto' is the most important class here. It tells the browser:
-    // "If the table inside gets wider than the screen, add a horizontal scrollbar."
-    // On mobile, this allows the user to swipe left and right to see all the columns.
+    // 'overflow-x-auto' makes the table scrollable horizontally on small screens.
+    // We've added a border and rounded corners to the container itself,
+    // which provides a clear visual boundary for the scrollable area.
     <div
       data-slot="table-container"
-      className="relative w-full overflow-x-auto"
+      className="relative w-full overflow-x-auto border rounded-lg"
     >
       <table
         data-slot="table"
-        className={cn("w-full caption-bottom text-sm", className)}
+        // --- RESPONSIVE TYPOGRAPHY ---
+        // We use a larger font size on mobile for readability (`text-base`)
+        // and scale it down for tablets and desktops (`sm:text-sm`) where more data density is expected.
+        className={cn("w-full caption-bottom text-base sm:text-sm", className)}
         {...props}
       />
     </div>
@@ -73,10 +76,13 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
     <th
       data-slot="table-head"
       className={cn(
-        // 'whitespace-nowrap' works with the overflow container.
-        // It prevents text in the headers from wrapping, which helps the table
-        // maintain its intended column widths instead of getting squished.
-        "text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+        // 'whitespace-nowrap' prevents headers from wrapping, maintaining column integrity.
+        "whitespace-nowrap text-left align-middle font-medium text-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+
+        // --- RESPONSIVE SIZING & PADDING ---
+        // We use taller headers with more padding on larger screens for better spacing and readability.
+        "h-12 px-3 sm:h-12 sm:px-4",
+        
         className
       )}
       {...props}
@@ -89,8 +95,14 @@ function TableCell({ className, ...props }: React.ComponentProps<"td">) {
     <td
       data-slot="table-cell"
       className={cn(
-        // 'whitespace-nowrap' also applies to cells for the same reason.
-        "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+        // 'whitespace-nowrap' is optional for cells. You might remove it if you
+        // want long text in a cell to wrap on larger screens.
+        "whitespace-nowrap align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+
+        // --- RESPONSIVE PADDING ---
+        // Padding is tighter on mobile to save space and more generous on larger screens.
+        "p-3 sm:p-4",
+
         className
       )}
       {...props}
@@ -105,7 +117,10 @@ function TableCaption({
   return (
     <caption
       data-slot="table-caption"
-      className={cn("text-muted-foreground mt-4 text-sm", className)}
+      className={cn(
+        "text-muted-foreground mt-4 px-3 text-center text-sm sm:px-4", 
+        className
+      )}
       {...props}
     />
   )
